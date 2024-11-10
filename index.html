@@ -16,14 +16,15 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color: #f4f4f4;
+            background: linear-gradient(to bottom right, #ff8c8c, #8c8cff);
         }
 
         /* Styling for the title */
         h1 {
-            font-size: 24px;
+            font-size: 36px; /* 50% larger than 24px */
             color: #333;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         /* Container for the chat interface */
@@ -89,7 +90,10 @@
 <body>
     <h1>Butler Bot: Your Gender Performativity Study Buddy</h1>
     <div id="chat-container">
-        <div id="chatbox"></div>
+        <div id="chatbox">
+            <!-- Initial message from the bot -->
+            <p><strong>Bot:</strong> Hi, I'm Butler Bot! What do you want to know about gender?</p>
+        </div>
         <div class="input-container">
             <input type="text" id="user-input" placeholder="Type your question here">
             <button onclick="getResponse()">Send</button>
