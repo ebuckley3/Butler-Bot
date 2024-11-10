@@ -3,11 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Butler Bot</title>
+    <title>Butler Bot: Your Gender Performativity Study Buddy</title>
+    
+    <!-- Embedded CSS -->
+    <style>
+        /* Style the body for general layout */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Container for the chat interface */
+        #chat-container {
+            width: 400px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Chatbox area where messages will appear */
+        #chatbox {
+            height: 300px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #fafafa;
+            border-radius: 5px;
+        }
+
+        /* Style for each user and bot message */
+        #chatbox p {
+            margin: 5px 0;
+        }
+
+        /* Input area */
+        #user-input {
+            width: 75%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+
+        /* Style for the send button */
+        button {
+            width: 20%;
+            padding: 8px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, this is Butler Bot!</h1>
+    <h1>Butler Bot: Your Gender Performativity Study Buddy</h1>
+    <div id="chat-container">
+        <div id="chatbox"></div>
+        <input type="text" id="user-input" placeholder="Type your question here">
+        <button onclick="getResponse()">Send</button>
+    </div>
+    
+    <!-- JavaScript Logic -->
+    <script>
+        function getResponse() {
+            const userInput = document.getElementById("user-input").value;
+            const chatbox = document.getElementById("chatbox");
+
+            // Simple response logic for now
+            let response = "";
+
+            if (userInput.toLowerCase().includes("gender performativity")) {
+                response = "Gender performativity is the concept that gender is not an innate quality but is expressed and performed based on societal expectations.";
+            } else if (userInput.toLowerCase().includes("judith butler")) {
+                response = "Judith Butler is a key theorist in gender studies, known for her work on gender performativity, suggesting that gender is a social construct performed through repeated acts.";
+            } else {
+                response = "I'm here to help answer questions about gender performativity and women's studies. Please ask me something related!";
+            }
+
+            // Display the conversation
+            chatbox.innerHTML += `<p><strong>You:</strong> ${userInput}</p>`;
+            chatbox.innerHTML += `<p><strong>Bot:</strong> ${response}</p>`;
+            document.getElementById("user-input").value = ""; // Clear the input
+        }
+    </script>
 </body>
 </html>
-
 
